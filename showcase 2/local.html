@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+ 
+ 
+
+<div class="topnav" id="myTopnav">
+  <a href="front.html" class="active">Aesthetics</a>
+  <a href="avaliacao.html">Avaliacao</a>
+  <a href="contato.html">Contato</a>
+  <a href="Equipe.html">Equipe</a>
+  <a href="local.html">Local</a>
+  <a href="procedimentos.html">Procedimentos</a>
+  <a href="sobre.html">Sobre</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<main>
+<div class="mapa">
+  <div id="titulo">
+    <h2>Localização</h2>
+  </div>    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1987.0572480794465!2d-42.78946124112166!3d-5.08518003130718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e39fa13760fb5%3A0x81769cc548a20b47!2sTeresina%20Shopping!5e0!3m2!1spt-BR!2sbr!4v1729615478337!5m2!1spt-BR!2sbr" width="1024" height="576" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+</div>
+
+
+</main>
+       
+
+     
+<script>
+    
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+  <script>var copy =document.querySelector(".logos-slide").cloneNode(true);
+  document.querySelector(".logos").appendChild(copy);
+  
+</script>
+<footer>
+  <div id="footer_content">
+    <div id="footer_contacts">
+      <h1>Aesthetics</h1>
+      <p>Descubra sua melhor versão </p>
+
+      <div id="footer_social_media">
+        <a href="https://www.instagram.com" class="footer-link" id="instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" class="footer-link" id="facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/" class="footer-link" id="whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <ul class="footer-list">
+      <li>
+        <h3>Conheça mais</h3>
+      </li>
+      <li>
+        <a href="Equipe.html" class="footer-link">Equipe</a>
+      </li>
+      <li>
+        <a href="procedimentos.html" class="footer-link">Procedimentos</a>
+      </li>
+      <li>
+        <a href="local.html" class="footer-link">Localização</a>
+      </li>
+    </ul>
+
+    <ul class="footer-list" id="week">
+      <li>
+        <h3>Horário de Funcionamento</h3>
+      </li>
+      <li class="hour">Segunda a Sexta: 9h - 19h</li>
+      <li class="hour">Sábado: 9h - 14h</li>
+      <li class="hour">Domingo: Fechado</li>
+    </ul>
+
+    <div id="footer_subscribe">
+      <h3>Inscreva-se</h3>
+      <p>digite seu e-mail para ser notificado sobre nossas ofertas e novidades</p>
+    
+      <div id="input_group">
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <button type="submit" id="submitf">
+          <i class="fa-regular fa-envelope"></i>
+        </button>
+      </div>
+      <div id="success-message" style="display: none; color: green;">Inscrição realizada com sucesso!</div>
+    </div>
+  </div>
+  <div id="footer_copyright">
+    &#169 2024 all rights reserved
+  </div>
+</footer>
+
+<script>
+ document.getElementById('submitf').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita o redirecionamento do formulário
+
+    const emailInput = document.getElementById('email');
+    const successMessage = document.getElementById('success-message');
+
+    
+    fetch('https://formspree.io/f/xrbgbywb', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: emailInput.value })
+    })
+    .then(response => {
+        if (response.ok) {
+            successMessage.style.display = 'block'; 
+            emailInput.value = ''; 
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        } else {
+            throw new Error('Erro ao enviar o formulário');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+});
+
+
+document.getElementById('input_group').addEventListener('click', function() {
+    const successMessage = document.getElementById('success-message');
+    successMessage.style.display = 'none';
+});
+
+</script>
+
+
+</body>
+
+
+</html>
+
