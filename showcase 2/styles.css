@@ -893,4 +893,22 @@ select:hover {
   font-size: 36px; 
   color: #3D85C6; 
 }
+@media (max-width: 1068px) {
+  .aboutUs-text {
+    font-size: 02vw;
+  }
+  
+  #companyName {
+    font-size: 5vh; 
+  }
+}
 
+@media (max-width: 480px) {
+  .aboutUs-text {
+    font-size: 2vw; 
+  }
+  
+  #companyName {
+    font-size: 5vh; 
+  }
+}
