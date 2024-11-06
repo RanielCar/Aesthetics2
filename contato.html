@@ -45,14 +45,14 @@
 </main>
 <script>
   document.querySelector('.form-container').addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita o redirecionamento do formulário
+      event.preventDefault(); 
   
       const formData = new FormData(this);
       const successMessage = document.createElement('div');
       successMessage.style.color = 'green';
       successMessage.textContent = 'Mensagem enviada com sucesso! Retornaremos em breve.';
       
-      // Enviar os dados do formulário para o Formspree
+      
       fetch('https://formspree.io/f/mjkvylbv', {
           method: 'POST',
           headers: {
